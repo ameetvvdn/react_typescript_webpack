@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.1.1",
+    "font-awesome": "^4.7.0",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "react": "^16.4.1",
@@ -84,7 +85,9 @@
   "babel": {
     "presets": [
       "env",
-      "react-app"
+      "react-app",
+      "@babel/env",
+      "@babel/typescript"
     ]
   },
   "proxy": "http://localhost:8080/"
