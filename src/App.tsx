@@ -4,7 +4,6 @@ import './App.scss';
 import logo from './logo.svg';
 
 class App extends React.Component {
-  private abc: any;
   public render() {
     return (
       <div className='App'>
