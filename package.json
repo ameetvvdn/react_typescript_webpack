@@ -24,7 +24,7 @@
     "universal-rxjs-ajax": "^2.0.0"
   },
   "scripts": {
-    "start": "yarn lint && node scripts/start.js",
+    "start": "npm run lint && node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
