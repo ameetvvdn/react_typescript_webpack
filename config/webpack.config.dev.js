@@ -158,7 +158,7 @@ module.exports = {
           /\.jpe?g$/,
           /\.png$/,
           /\.scss$/,
-          /\.sass$/,
+          /\.less$/,
         ],
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: require.resolve('file-loader'),
@@ -205,7 +205,7 @@ module.exports = {
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
       {
-        test: /\.scss$/,
+        test: /\.less$/,
         use: [
           require.resolve('style-loader'),
           {
@@ -214,7 +214,7 @@ module.exports = {
               importLoaders: 1,
             },
           },
-          require.resolve('sass-loader'),
+          require.resolve('less-loader'),
           {
             loader: require.resolve('postcss-loader'),
             options: {

@@ -20,7 +20,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
     //     }
     //   });  
     config.module.rules.push({
-        test: /\.scss$/,
+        test: /\.less$/,
         use: [
             require.resolve('style-loader'),
             {
@@ -29,7 +29,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
                     importLoaders: 1,
                 },
             },
-            require.resolve('sass-loader'),
+            require.resolve('less-loader'),
             {
                 loader: require.resolve('postcss-loader'),
                 options: {
