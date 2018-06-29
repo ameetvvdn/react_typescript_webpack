@@ -1,12 +1,21 @@
 {
     "presets": [
         "@babel/env",
-        "@babel/typescript"
+        "@babel/typescript",
+        "react",
+        "es2015",
+        "stage-0"
     ],
     "plugins": [
         "@babel/proposal-class-properties",
         "@babel/proposal-object-rest-spread",
         ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }],
-        "relay"
-    ]
+        ["relay", { "artifactDirectory": "./src/__relay_artifacts__" }],
+        "transform-runtime"
+    ],
+    "ignore": [
+        "**/*.graphql.ts",
+        "**/*.graphql",
+        "node_modules"
+      ]
 }

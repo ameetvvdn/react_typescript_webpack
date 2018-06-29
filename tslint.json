@@ -10,7 +10,8 @@
       "config/**/*.js",
       "node_modules/**/*.ts",
       "src/@types/**/*.ts",
-      "src/stories/**/*.ts*"
+      "src/stories/**/*.ts*",
+      "src/**/*.ts*"
     ]
   },
   "rulesDirectory": [
