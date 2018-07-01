@@ -151,7 +151,7 @@ module.exports = {
           /\.jpe?g$/,
           /\.png$/,
           /\.scss$/,
-          /\.sass$/,
+          /\.less$/,
         ],
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: require.resolve('file-loader'),
@@ -177,7 +177,7 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         include: paths.appSrc,
-        loader: require.resolve('ts-loader'),
+        loader: [require.resolve('babel-loader'), require.resolve('ts-loader')],
       },
       {
         test: /\.(js|jsx)$/,
@@ -201,7 +201,7 @@ module.exports = {
       // use the "style" loader inside the async code so CSS from them won't be
       // in the main CSS file.
       {
-        test: /\.scss$/,
+        test: /\.less$/,
         loader: ExtractTextPlugin.extract(
           Object.assign(
             {
@@ -216,7 +216,7 @@ module.exports = {
                   },
                 },
                 {
-                  loader: require.resolve('sass-loader'),
+                  loader: require.resolve('less-loader'),
                   options: {
                     sourceMap: true,
                   },

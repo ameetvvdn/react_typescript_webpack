@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.0.0-beta.51",
+    "@babel/runtime": "^7.0.0-beta.51",
     "antd": "^3.6.4",
+    "bizcharts": "^3.1.10",
     "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.10",
@@ -17,14 +20,23 @@
     "universal-cookie": "^2.2.0",
     "universal-rxjs-ajax": "^2.0.0"
   },
+  "resolutions": {
+    "graphql": "^0.13.1",
+    "relay-compiler-language-typescript": "^0.9.0",
+    "relay-compiler": "https://github.com/alloy/relay/releases/download/v1.5.0-plugin.3/relay-compiler-1.5.0-plugin.3.tgz",
+    "relay-runtime": "https://github.com/alloy/relay/releases/download/v1.5.0-plugin.3/relay-runtime-1.5.0-plugin.3.tgz",
+    "babel-plugin-relay": "https://github.com/alloy/relay/releases/download/v1.5.0-plugin.3/babel-plugin-relay-1.5.0-plugin.3.tgz",
+    "react-relay": "https://github.com/alloy/relay/releases/download/v1.5.0-plugin.3/react-relay-1.5.0-plugin.3.tgz"
+  },
   "scripts": {
-    "start": "npm run lint && node scripts/start.js",
+    "start": "npm run relay && node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "lint": "tslint -c ./tslint.json './src/**/*.ts*'",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "relay": "relay-compiler --src ./src/ --schema ./schema.graphql --language typescript --artifactDirectory ./src/__generated__"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.51",
@@ -32,7 +44,10 @@
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.51",
     "@babel/plugin-proposal-decorators": "^7.0.0-beta.51",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.51",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.0.0-beta.51",
+    "@babel/preset-es2015": "^7.0.0-beta.51",
+    "@babel/preset-react": "^7.0.0-beta.51",
     "@babel/preset-typescript": "^7.0.0-beta.51",
     "@storybook/addon-actions": "4.0.0-alpha.3",
     "@storybook/addon-info": "4.0.0-alpha.3",
@@ -48,19 +63,23 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
     "babel-loader": "^8.0.0-beta.2",
-    "babel-plugin-relay": "^1.6.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-plugin-react-transform": "^3.0.0",
+    "babel-plugin-relay": "https://github.com/alloy/relay/releases/download/v1.5.0-plugin.3/babel-plugin-relay-1.5.0-plugin.3.tgz",
     "babel-polyfill": "^6.26.0",
     "babel-preset-airbnb": "^2.5.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-react-app": "^3.1.1",
-    "babel-runtime": "^6.26.0",
+    "babel-preset-stage-0": "^6.5.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "chalk": "^2.4.1",
     "css-loader": "^0.28.11",
     "dotenv": "^6.0.0",
+    "eslint": "3.19.0",
+    "eslint-config-fbjs": "1.1.1",
+    "eslint-plugin-babel": "3.3.0",
+    "eslint-plugin-flowtype": "2.15.0",
+    "eslint-plugin-react": "5.2.2",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
+    "fork-ts-checker-webpack-plugin": "^0.2.8",
     "fs-extra": "^6.0.1",
     "graphql": "^0.13.2",
     "html-webpack-plugin": "^3.2.0",
@@ -76,6 +95,9 @@
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-error-overlay": "^4.0.0",
     "react-scripts": "^1.1.4",
+    "relay-compiler": "https://github.com/alloy/relay/releases/download/v1.5.0-plugin.3/relay-compiler-1.5.0-plugin.3.tgz",
+    "relay-compiler-language-typescript": "^0.9.0",
+    "relay-runtime": "https://github.com/alloy/relay/releases/download/v1.5.0-plugin.3/relay-runtime-1.5.0-plugin.3.tgz",
     "style-loader": "^0.21.0",
     "sw-precache-webpack-plugin": "^0.11.5",
     "ts-loader": "^4.4.1",
@@ -88,14 +110,5 @@
     "webpack-dev-server": "^3.1.4",
     "webpack-manifest-plugin": "^2.0.3",
     "whatwg-fetch": "^2.0.4"
-  },
-  "babel": {
-    "presets": [
-      "env",
-      "react-app",
-      "@babel/env",
-      "@babel/typescript"
-    ]
-  },
-  "proxy": "http://localhost:8080/"
+  }
 }

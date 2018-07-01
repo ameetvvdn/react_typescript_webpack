@@ -62,11 +62,8 @@ module.exports = (baseConfig, env, defaultConfig) => {
     });
     config.module.rules.push({
         test: /\.(ts|tsx)$/,
-        loader: "ts-loader",
+        loader: [require.resolve('babel-loader'), require.resolve('ts-loader')],
         include: [path.resolve(__dirname, "../src")],
-        options: {
-            transpileOnly: true
-        }
     });
     // [ts-loader, babel-loader, ...]
     //   /console.log(JSON.stringify(config))

@@ -185,7 +185,8 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         include: paths.appSrc,
-        loader: require.resolve('ts-loader'),
+        exclude: "/src/__generated__",
+        loader: [require.resolve('babel-loader'), require.resolve('ts-loader')],
       },
       {
         test: /\.(js|jsx)$/,

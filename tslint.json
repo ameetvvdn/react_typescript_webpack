@@ -76,6 +76,7 @@
     ],
     "no-misused-new": true,
     "no-non-null-assertion": true,
+    "jsx-wrap-multiline": false,
     "no-shadowed-variable": true,
     "no-string-literal": false,
     "no-string-throw": true,

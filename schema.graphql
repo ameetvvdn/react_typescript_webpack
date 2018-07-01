@@ -1,0 +1,92 @@
+type Client {
+  id: ID
+  name: String
+  spaceUsed: Int
+  spaceLimit: Int
+  companyEmail: String
+  databaseName: String
+  companyPhone: String
+  companyName: String
+  companyUrl: String
+  createdById: Int
+  createdBy: User
+  updatedById: Int
+  updatedBy: User
+  createdAt: Date
+  updatedAt: Date
+
+  # Row Version
+  epoch: Int
+}
+
+# Date custom scalar type
+scalar Date
+
+type Mutation {
+  userCreate(firstName: String, lastName: String, email: String): User
+  userDelete(id: ID): Boolean
+  clientCreate(name: String): Client
+  clientDelete(id: ID): Boolean
+}
+
+type Pet implements TenantScopedModel {
+  id: ID
+  name: String
+  age: Int
+  userId: Int
+  user: User
+  key: Int
+  clientId: Int
+  createdById: Int
+  createdBy: User
+  updatedById: Int
+  updatedBy: User
+  createdAt: Date
+  updatedAt: Date
+  epoch: Int
+}
+
+type Query {
+  pets(limit: Int, offset: Int, order: String): [Pet]
+  pet(id: ID): Pet
+  users(limit: Int, offset: Int, order: String): [User]
+  user(id: ID): User
+  clients(limit: Int, offset: Int, order: String): [Client]
+  client(id: ID, name: String): Client
+}
+
+interface TenantScopedModel {
+  key: Int
+  clientId: Int
+  createdById: Int
+  createdBy: User
+  updatedById: Int
+  updatedBy: User
+  createdAt: Date
+  updatedAt: Date
+  epoch: Int
+}
+
+# The `Upload` scalar type represents a file upload promise that resolves an
+# object containing `stream`, `filename`, `mimetype` and `encoding`.
+scalar Upload
+
+type User implements TenantScopedModel {
+  id: ID
+  firstName: String
+  lastName: String
+  email: String
+  pets: [Pet]
+  key: Int
+  clientId: Int
+  createdById: Int
+  createdBy: User
+  updatedById: Int
+  updatedBy: User
+  createdAt: Date
+  updatedAt: Date
+
+  # Row Version
+  epoch: Int
+}
+
