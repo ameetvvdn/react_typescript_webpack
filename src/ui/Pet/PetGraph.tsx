@@ -21,6 +21,8 @@ class PetGraph extends Component<IPetProp> {
       name: { alias: 'Pet Name' }
     };
 
+    const bizG2 = (g2Chart: any) => (g2Chart);
+
     return (
       <div>
         <Chart width={600} height={400} data={this.props.data} scale={cols}>
@@ -31,7 +33,7 @@ class PetGraph extends Component<IPetProp> {
           <Geom type='interval' position='name*age' color='name' />
         </Chart>
         <Chart width={600} height={400} data={this.props.data}
-          scale={cols} onGetG2Instance={(g2Chart) => g2Chart /*this is needed for realtime update*/}>
+          scale={cols} onGetG2Instance={bizG2}>
           <Legend />
           <Tooltip crosshairs={{ type: 'y' }} />
           <Axis />

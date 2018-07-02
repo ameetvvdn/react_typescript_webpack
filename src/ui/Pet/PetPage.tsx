@@ -15,20 +15,20 @@ const PetPageQuery = graphql`
 `
 
 class PetPage extends Component<{}, {}> {
-
   render() {
+    const renderPage = ({ error, props }: any) => {
+      if (error) {
+        return <div>{error.message}</div>
+      } else if (props) {
+        return <PetGraph data={props.pets} />
+      }
+      return <div>Loading</div>
+    };
     return (
       <QueryRenderer
         environment={Environment}
         query={PetPageQuery}
-        render={({ error, props }: any) => {
-          if (error) {
-            return <div>{error.message}</div>
-          } else if (props) {
-            return <PetGraph data={props.pets} />
-          }
-          return <div>Loading</div>
-        }}
+        render={renderPage}
       />
     )
   }
