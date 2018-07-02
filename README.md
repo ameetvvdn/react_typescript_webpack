@@ -53,7 +53,7 @@ You may serve it with a static server:
 
 
 ## Storybook 
-is a development environment for UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
+Storybook is a development environment for UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
 
 ## Development StoryBook
 To run in development mode use (npm)
@@ -97,4 +97,4 @@ After running relay-compilier `./__generated__/` will be created in folder conta
 BizCharts is a React chart library based on G2 package. It has all the advantages of G2 and React. It allows users to combine countless charts in the form of components. It also integrates a large number of statistical tools, supports multiple coordinate system drawing, and interactive customization. Animation customization and graphic customization, and more. I believe BizCharts will be a powerful assistant for your data visualization project.
 
 ## Webpack
-webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.
+Webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.
