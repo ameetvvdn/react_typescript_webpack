@@ -14,7 +14,7 @@ export type PetPageQueryResponse = {
 
 /*
 query PetPageQuery {
-  pets(limit: 10) {
+  pets(limit: 5) {
     key
     name
     age
@@ -28,7 +28,7 @@ var v0 = [
   {
     "kind": "Literal",
     "name": "limit",
-    "value": 10,
+    "value": 5,
     "type": "Int"
   }
 ],
@@ -58,7 +58,7 @@ return {
   "operationKind": "query",
   "name": "PetPageQuery",
   "id": null,
-  "text": "query PetPageQuery {\n  pets(limit: 10) {\n    key\n    name\n    age\n    id\n  }\n}\n",
+  "text": "query PetPageQuery {\n  pets(limit: 5) {\n    key\n    name\n    age\n    id\n  }\n}\n",
   "metadata": {},
   "fragment": {
     "kind": "Fragment",
@@ -71,7 +71,7 @@ return {
         "kind": "LinkedField",
         "alias": null,
         "name": "pets",
-        "storageKey": "pets(limit:10)",
+        "storageKey": "pets(limit:5)",
         "args": v0,
         "concreteType": "Pet",
         "plural": true,
@@ -92,7 +92,7 @@ return {
         "kind": "LinkedField",
         "alias": null,
         "name": "pets",
-        "storageKey": "pets(limit:10)",
+        "storageKey": "pets(limit:5)",
         "args": v0,
         "concreteType": "Pet",
         "plural": true,
@@ -113,5 +113,5 @@ return {
   }
 };
 })();
-(node as any).hash = 'a3cf63930080f99fc8222a5c25cd1782';
+(node as any).hash = '8e454c94e6b779d942bc3716aea347f2';
 export default node;

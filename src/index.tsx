@@ -1,11 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
-import './index.less';
-// import registerServiceWorker from './registerServiceWorker';
+import Home from './ui/Home/Home';
+
+import './resources/styles/main.less';
 
 ReactDOM.render(
-  <App />,
+  <Home />,
   document.getElementById('root') as HTMLElement
 );
-// registerServiceWorker();

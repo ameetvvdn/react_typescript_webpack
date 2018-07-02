@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { graphql, QueryRenderer } from 'react-relay';
 
-import Environment from './relayEnviroment';
+import Environment from '../../relayEnviroment';
 import PetGraph from './PetGraph';
 
 const PetPageQuery = graphql`
   query PetPageQuery {
-    pets(limit: 10){
+    pets(limit: 5){
       key
       name
       age

@@ -9,21 +9,17 @@ import { linkTo } from "@storybook/addon-links";
 // tslint:disable-next-line
 import { Welcome } from "@storybook/react/demo";
 
-import App from "../App";
+import Home from '../ui/Home/Home';
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("App")} />
 ));
 
-storiesOf("App", module)
-  .add("with text", () => (
-    <App  />
+storiesOf("Home", module)
+  .add("with graph", () => (
+    <Home  />
   ))
-  .add("with some emoji", () => (
-    <App  />
-  ));
-// addDecorator(App);
+  // .add("with some emoji", () => (
+  //   <App  />
+  // ));
 
-// storiesOf('App', module).add('default', () =>
-//     <App />
-// );

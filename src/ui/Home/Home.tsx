@@ -1,10 +1,10 @@
-import * as React from 'react';
-import './App.less';
+import React, {Component} from 'react';
+// import './App.less';
 
-import logo from './logo.png';
-import PetPage from './PetPage';
+import logo from '../../resources/images/logo.png';
+import PetPage from '../Pet/PetPage';
 
-class App extends React.Component {
+class Home extends Component {
   public render() {
     return (
       <div className='App'>
@@ -18,4 +18,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Home;
