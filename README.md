@@ -9,6 +9,11 @@ React frontend component
 - `./build/` 	for compiled version
 - `./config/` for configuration
 - `./.storybook/` for storybook configuration
+- `./src/storybook/` for storybook files
+- `./src/resourses/` for images and .less files
+- `./src/@types/` for types definition files
+- `./src/ui/` contains react components
+- `./src/utils/` contains utility files
 
 # Requirements
 - Yarn/npm
@@ -34,8 +39,11 @@ To run ts lint
 ```
 $ npm run lint (or) $ yarn lint
 ```
-
+To run run storybook
+```
 $ npm run storybook (or) $ yarn storybook
+```
+
 Server will be available on port [http://localhost:3000](http://localhost:3000).
 
 
@@ -49,6 +57,7 @@ Run server
 You may serve it with a static server:
 
   npm install -g serve
+  
   serve -s build
 
 

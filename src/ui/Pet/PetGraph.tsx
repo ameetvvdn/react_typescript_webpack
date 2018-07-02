@@ -56,6 +56,3 @@ class PetGraph extends Component<IPetProp> {
 }
 
 export default PetGraph;
-
-// export default UserList;
-

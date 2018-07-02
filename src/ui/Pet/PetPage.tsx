@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { graphql, QueryRenderer } from 'react-relay';
 
-import Environment from '../../relayEnviroment';
+import Environment from '../../utils/relayEnviroment';
 import PetGraph from './PetGraph';
 
 const PetPageQuery = graphql`
