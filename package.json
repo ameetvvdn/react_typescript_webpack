@@ -29,8 +29,8 @@
     "react-relay": "https://github.com/alloy/relay/releases/download/v1.5.0-plugin.3/react-relay-1.5.0-plugin.3.tgz"
   },
   "scripts": {
-    "start": "npm run relay && node scripts/start.js",
-    "build": "node scripts/build.js",
+    "start": "npm run relay && npm run lint && node scripts/start.js",
+    "build": "npm run relay &&node scripts/build.js",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "lint": "tslint -c ./tslint.json './src/**/*.ts*'",
